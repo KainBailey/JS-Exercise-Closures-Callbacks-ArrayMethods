@@ -27,7 +27,7 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Counter 1 and Counter 2 is a counter for diffrent teams. There are 2 teams total.
  * 2. Which of the two uses a closure? How can you tell?
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
@@ -56,14 +56,15 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(max){
 
-    /*Code Here*/
+  return Math.floor(Math.random() * Math.floor(max));
 
 }
 
-/* Task 3: finalScore()
+console.log(inning());
 
+/* Task 3: Finalscore()
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
 
 For example, 
@@ -76,11 +77,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningFunc, numOfInning)
+{
 
-  /*Code Here*/
-
+  let homeScore = 0; let awayScore = 0;
+  for ( let i = 0; i < numOfInning; i++)
+  {
+    homeScore += inningFunc(),
+    awayScore += inningFunc(), 
+  
+    console.log(`Home: ${homeScore}`);
+    console.log(`Away: ${awayScore}`);
+  }
+  return variable = {Home: homeScore, Away: awayScore}
 }
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -104,8 +115,24 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inningFunc,numOfinning) {
+let getInningScore
 }
 
+{
+let homeScpre = 0; let awayScore = 0;
+for (let i = 0; 1 < numOfinning; i++)
 
+
+{
+  homeScore += inningFunc(),
+  awayScore += inningFunc()
+}
+
+return `${numOfInning} inning: ${awayScore}
+awayTeam - ${homeScore} homeTeam`
+}
+console.log(getInningScore)
+
+
+console.log(scoreboard(1))
